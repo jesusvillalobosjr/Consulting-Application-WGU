@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.logInFormController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="titleLogIn" prefWidth="98.0" text="Log In" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="65.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label fx:id="username" text="Username:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="usernameLogIn" onMousePressed="#typingUsername" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label fx:id="password" text="Password:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="passwordLogIn" onMousePressed="#passwordClicked" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="76.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="logInButton" mnemonicParsing="false" onAction="#logInButtonClicked" text="Enter">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label fx:id="languageSelectionLabel" prefHeight="25.0" text="Language Selection:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="languageSelection" onAction="#changeLanguage" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label fx:id="timeZoneLabel" prefHeight="25.0" text="Time Zone: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="timeZone" prefHeight="25.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

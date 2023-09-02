@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.ReportsMonthController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="800.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="800.0" spacing="600.0">
+               <children>
+                  <Label text="Reports">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Back" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="31.0" prefWidth="800.0" spacing="75.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" onAction="#changeContacts" text="Contact Schedule">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="reports" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#changeToType" text="Amount By Type" toggleGroup="$reports" />
+                  <RadioButton mnemonicParsing="false" selected="true" text="Amount By Month" toggleGroup="$reports" />
+                  <RadioButton mnemonicParsing="false" onAction="#changeToCustomer" text="Amount By Customer" toggleGroup="$reports" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="800.0" spacing="30.0">
+               <children>
+                  <Label text="Choose Month:" />
+                  <ChoiceBox fx:id="selectMonth" prefWidth="150.0" onAction="#selectMonthAppointment"/>
+                  <Label text="Amount:" />
+                  <Label fx:id="amountOfType" />
+               </children>
+            </HBox>
+            <HBox prefHeight="267.0" prefWidth="800.0">
+               <children>
+                  <TableView fx:id="appointments" prefHeight="267.0" prefWidth="813.0">
+                    <columns>
+                      <TableColumn fx:id="apptID" prefWidth="98.0" text="Appointment ID" />
+                      <TableColumn fx:id="apptTitle" prefWidth="77.0" text="Title" />
+                        <TableColumn fx:id="apptType" prefWidth="109.0" text="Type" />
+                        <TableColumn fx:id="apptDescription" prefWidth="103.0" text="Description" />
+                        <TableColumn fx:id="apptStartDate" prefWidth="84.0" text="Start Date" />
+                        <TableColumn fx:id="apptStartTime" prefWidth="83.0" text="Start Time" />
+                        <TableColumn fx:id="apptEndDate" prefWidth="86.0" text="End Date" />
+                        <TableColumn fx:id="apptEndTime" text="End Time" />
+                        <TableColumn fx:id="customerID" prefWidth="79.0" text="Customer ID" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.MainMenuAllAppointmentsController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="1300.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="1300.0" spacing="20.0">
+               <children>
+                  <Label text="Select:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <RadioButton mnemonicParsing="false" onAction="#changeToCustomers" text="Customers">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="select" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" selected="true" text="All Appointments" toggleGroup="$select">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#changeToApptWeek" text="Appointmets by Week" toggleGroup="$select">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#changeToApptMonth" text="Appointments by Month" toggleGroup="$select">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="525.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <Button mnemonicParsing="false" onAction="#logout" text="Logout">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="353.0" prefWidth="1300.0">
+               <children>
+                  <TableView fx:id="appointments" prefHeight="353.0" prefWidth="1300.0">
+                     <columns>
+                        <TableColumn fx:id="apptID" prefWidth="58.0" text="Appt ID" />
+                        <TableColumn fx:id="apptTitle" prefWidth="67.0" text="Title" />
+                        <TableColumn fx:id="apptDescription" prefWidth="101.0" text="Description" />
+                        <TableColumn fx:id="apptLocation" minWidth="4.0" prefWidth="83.0" text="Location" />
+                        <TableColumn fx:id="apptType" prefWidth="72.0" text="Type" />
+                        <TableColumn fx:id="apptStartDate" prefWidth="79.0" text="Start Date" />
+                        <TableColumn fx:id="apptEndDate" prefWidth="75.0" text="End Date" />
+                        <TableColumn fx:id="apptStartTime" text="Start Time" />
+                        <TableColumn fx:id="apptEndTime" prefWidth="89.0" text="End Time" />
+                        <TableColumn fx:id="apptDateCreated" prefWidth="103.0" text="Date Created" />
+                        <TableColumn fx:id="apptCreatedBy" prefWidth="93.0" text="Created By" />
+                        <TableColumn fx:id="apptLastUpdated" prefWidth="98.0" text="Last Updated" />
+                        <TableColumn fx:id="apptUpdatedBy" prefWidth="82.0" text="Updated By" />
+                        <TableColumn fx:id="customerID" prefWidth="82.0" text="Customer ID" />
+                        <TableColumn fx:id="contactID" prefWidth="73.0" text="Contact ID" />
+                        <TableColumn fx:id="userID" prefWidth="64.0" text="User ID" />
+                     </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="93.0" prefWidth="1100.0" spacing="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#createAppointment" prefWidth="128.5" text="Create Appointment" />
+                  <Button mnemonicParsing="false" onAction="#modifyAppointment" text="Modify Appointment" />
+                  <Button mnemonicParsing="false" onAction="#deleteAppointment" prefWidth="128.5" text="Delete Appointment" />
+                  <Button mnemonicParsing="false" onAction="#changeToReports" prefWidth="111.5" text="Reports" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.MainMenuCustomersController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="1000.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="1000.0" spacing="20.0">
+               <children>
+                  <Label text="Select:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <RadioButton mnemonicParsing="false" selected="true" text="Customers">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Select" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#changeAllApptMenu" text="All Appointments" toggleGroup="$Select">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#changeWeeklyAppt" text="Appointments by Week">
+                     <font>
+                        <Font size="14.0" />
+                     </font></RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#changeMonthlyAppt" text="Appointments by Month">
+                     <HBox.margin>
+                        <Insets right="225.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Button mnemonicParsing="false" onAction="#logout" text="Logout">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="353.0" prefWidth="1000.0">
+               <children>
+                  <TableView fx:id="customers" prefHeight="354.0" prefWidth="1000.0">
+                    <columns>
+                      <TableColumn fx:id="customerID" prefWidth="83.0" text="Customer ID" />
+                      <TableColumn fx:id="customerName" prefWidth="113.0" text="Name" />
+                        <TableColumn fx:id="customerAddress" prefWidth="112.0" text="Address" />
+                        <TableColumn fx:id="customerZip" minWidth="4.0" prefWidth="73.0" text="Postal Code" />
+                        <TableColumn fx:id="customerNumber" prefWidth="124.0" text="Phone Number" />
+                        <TableColumn fx:id="customerDateCreated" prefWidth="135.0" text="Date Created" />
+                        <TableColumn fx:id="customerCreatedBy" prefWidth="69.0" text="Created By" />
+                        <TableColumn fx:id="customerLastUpdated" prefWidth="123.0" text="Last Updated" />
+                        <TableColumn fx:id="customerUpdatedBy" prefWidth="76.0" text="Updated By" />
+                        <TableColumn fx:id="customerDivision" prefWidth="91.0" text="Division" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="93.0" prefWidth="1000.0" spacing="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#createCustomer" prefWidth="111.5" text="Create Customer" />
+                  <Button mnemonicParsing="false" onAction="#modifyCustomer" text="Modify Customer" />
+                  <Button mnemonicParsing="false" onAction="#deleteCustomer" prefWidth="111.5" text="Delete Customer" />
+                  <Button mnemonicParsing="false" onAction="#changeReport" prefWidth="111.5" text="Reports" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
